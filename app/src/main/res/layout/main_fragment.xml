@@ -37,12 +37,11 @@
         android:id="@+id/pictureImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/StyleElem"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_layout"
         app:layout_constraintBottom_toTopOf="@+id/pictureTitle"
-        android:layout_marginTop="@dimen/marginPictureImageTop"
-        android:layout_marginBottom="@dimen/marginPictureImageBottom"
         app:layout_constraintVertical_chainStyle="packed"/>
 
     <TextView
@@ -53,5 +52,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pictureImage"
         app:layout_constraintBottom_toBottomOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

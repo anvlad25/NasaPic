@@ -13,7 +13,6 @@ import com.example.nasapic.databinding.MainFragmentBinding
 import com.example.nasapic.model.json_model.pic_of_the_day.PictureData
 
 class MainFragment : Fragment() {
-
     private var _binding: MainFragmentBinding? = null
     private val binding get() = _binding!!
 
