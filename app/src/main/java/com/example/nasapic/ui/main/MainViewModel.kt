@@ -29,7 +29,7 @@ class MainViewModel(private val liveDataToObserve: MutableLiveData<PictureData> 
 
         pictureDayDTO?.let {
             pictureData = PictureData(
-                it.copyright,
+                //it.copyright,
                 it.date,
                 it.explanation,
                 //it.hdurl,
