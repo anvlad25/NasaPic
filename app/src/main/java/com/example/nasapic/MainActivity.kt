@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         val earthFragment = EarthImageFragment()
 
         bottomMenu.setOnItemSelectedListener {
-            when(it.itemId) {
+            when (it.itemId) {
                 R.id.menu_home -> setCurrentFragment(homeFragment)
                 R.id.menu_settings -> setCurrentFragment(settingsFragment)
                 R.id.menu_earth -> setCurrentFragment(earthFragment)
@@ -36,6 +36,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun setCurrentFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().apply {
+            setCustomAnimations(
+                R.anim.slide_in,
+                R.anim.fade_out
+            )
             replace(R.id.container, fragment)
             commit()
         }
