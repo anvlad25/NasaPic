@@ -32,7 +32,7 @@ class MainViewModel(private val liveDataToObserve: MutableLiveData<PictureData> 
                 it.copyright,
                 it.date,
                 it.explanation,
-                it.hdurl,
+                //it.hdurl,
                 it.media_type,
                 it.service_version,
                 it.title,
