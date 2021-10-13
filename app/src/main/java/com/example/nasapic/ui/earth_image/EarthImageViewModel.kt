@@ -8,8 +8,9 @@ import com.example.nasapic.model.json_model.earth_image.EarthImageDTO
 import com.example.nasapic.model.json_model.earth_image.EarthImageData
 import com.example.nasapic.model.loader.PictureRepo
 
-class EarthImageViewModel(private val liveDataToObserve: MutableLiveData<EarthImageData> = MutableLiveData()) :
-    ViewModel() {
+class EarthImageViewModel : ViewModel() {
+    private val liveDataToObserve: MutableLiveData<EarthImageData> = MutableLiveData()
+
     fun getData(lon: String, lat: String, date: String, dim: String): LiveData<EarthImageData> {
         getImageFromSource(lon, lat, date, dim)
         return liveDataToObserve
@@ -23,7 +24,8 @@ class EarthImageViewModel(private val liveDataToObserve: MutableLiveData<EarthIm
     }
 
     private fun getEarthImage(lon: String, lat: String, date: String, dim: String): EarthImageData {
-        val earthImageDTO: EarthImageDTO? = PictureRepo.api.getImageEarth(BuildConfig.API_KEY, lon, lat, date, dim).execute().body()
+        val earthImageDTO: EarthImageDTO? =
+            PictureRepo.api.getImageEarth(BuildConfig.API_KEY, lon, lat, date, dim).execute().body()
         var earthImageData: EarthImageData = EarthImageData()
 
         earthImageDTO?.let {

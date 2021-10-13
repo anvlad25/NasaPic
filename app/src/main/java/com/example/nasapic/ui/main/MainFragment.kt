@@ -12,6 +12,8 @@ import coil.api.load
 import com.example.nasapic.databinding.MainFragmentStartBinding
 import com.example.nasapic.model.json_model.pic_of_the_day.PictureData
 
+private const val WIKI_URL: String = "https://en.wikipedia.org/wiki/"
+
 class MainFragment : Fragment() {
     private var _binding: MainFragmentStartBinding? = null
     private val binding get() = _binding!!
@@ -32,7 +34,7 @@ class MainFragment : Fragment() {
 
         binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
+                data = Uri.parse(WIKI_URL + binding.inputEditText.text.toString())
             })
         }
     }
