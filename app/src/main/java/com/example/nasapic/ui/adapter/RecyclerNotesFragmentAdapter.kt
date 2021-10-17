@@ -1,5 +1,9 @@
 package com.example.nasapic.ui.adapter
 
+import android.graphics.Color
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,9 +44,8 @@ class RecyclerNotesFragmentAdapter(private var itemClickListener: RecyclerNotesF
 
     inner class RecyclerViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(notesData: Pair<NotesData, Boolean>) = with(binding) {
-            noteName.text = notesData.first.notesName
+            noteName.text = makeBlueText(notesData.first.notesName)
             noteDesc.text = notesData.first.notesDesc
-
             root.setOnClickListener {
                 itemClickListener.onItemViewClick(notesData.first)
                 toggleText()
@@ -51,6 +54,16 @@ class RecyclerNotesFragmentAdapter(private var itemClickListener: RecyclerNotesF
             noteUp.setOnClickListener { moveUp() }
             noteDown.setOnClickListener { moveDown() }
             noteDesc.visibility = if (notesData.second) View.VISIBLE else View.GONE
+        }
+
+        private fun makeBlueText(text: String): SpannableString {
+            val notesNameSpans = SpannableString(text)
+            notesNameSpans.setSpan(
+                ForegroundColorSpan(Color.BLUE),
+                0, text.length,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            return notesNameSpans
         }
 
         fun deleteItem() {
@@ -77,7 +90,8 @@ class RecyclerNotesFragmentAdapter(private var itemClickListener: RecyclerNotesF
         }
 
         private fun toggleText() {
-            notesData[layoutPosition] = Pair(notesData[layoutPosition].first, !notesData[layoutPosition].second)
+            notesData[layoutPosition] =
+                Pair(notesData[layoutPosition].first, !notesData[layoutPosition].second)
             notifyItemChanged(layoutPosition)
         }
     }
