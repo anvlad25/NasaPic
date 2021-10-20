@@ -10,9 +10,10 @@
     <string name="ThemeStr1">Тема 1</string>
     <string name="ThemeStr2">Тема 2</string>
     <string name="earth">Земля</string>
-    <string name="lonTextHint">lon</string>
-    <string name="latTextHint">lat</string>
-    <string name="dateTextHint">date</string>
-    <string name="dimTextHint">dim</string>
+    <string name="lonTextHint">Долгота</string>
+    <string name="latTextHint">Широта</string>
+    <string name="dateTextHint">Дата</string>
+    <string name="dimTextHint">Масштаб</string>
     <string name="earthImageButton">Получить</string>
+    <string name="notes">Дела</string>
 </resources>

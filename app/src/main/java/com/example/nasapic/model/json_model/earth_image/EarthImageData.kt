@@ -6,5 +6,5 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class EarthImageData(
     val url: String = "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/thumbnails",
-    val id: String = "Null"
+    val id: String = "-1"
 ): Parcelable

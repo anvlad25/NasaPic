@@ -9,18 +9,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import coil.api.load
-import com.example.nasapic.databinding.MainFragmentBinding
+import com.example.nasapic.databinding.MainFragmentStartBinding
 import com.example.nasapic.model.json_model.pic_of_the_day.PictureData
 
+private const val WIKI_URL: String = "https://en.wikipedia.org/wiki/"
+
 class MainFragment : Fragment() {
-    private var _binding: MainFragmentBinding? = null
+    private var _binding: MainFragmentStartBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = MainFragmentBinding.inflate(inflater, container, false)
+        _binding = MainFragmentStartBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -32,7 +34,7 @@ class MainFragment : Fragment() {
 
         binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
+                data = Uri.parse(WIKI_URL + binding.inputEditText.text.toString())
             })
         }
     }
