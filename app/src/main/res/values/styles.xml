@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="NewStyle" parent="Theme.MaterialComponents.Light.Bridge">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#03A9F4</item>
+        <item name="colorPrimaryVariant">#875FE1</item>
+        <item name="colorOnPrimary">#5B99DF</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#0384DA</item>
+        <item name="colorSecondaryVariant">#013D87</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:background">@color/purple_200</item>
+        <item name="android:fontStyle">@font/alice</item>
+    </style>
+
+    <style name="StyleElem">
+        <item name="android:layout_marginTop">@dimen/marginPictureImageTop</item>
+        <item name="android:layout_marginBottom">@dimen/marginPictureImageBottom</item>
+    </style>
+</resources>

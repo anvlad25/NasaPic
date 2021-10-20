@@ -8,8 +8,8 @@ import com.example.nasapic.model.json_model.pic_of_the_day.PictureData
 import com.example.nasapic.model.json_model.pic_of_the_day.PictureDayDTO
 import com.example.nasapic.model.loader.PictureRepo
 
-class MainViewModel(private val liveDataToObserve: MutableLiveData<PictureData> = MutableLiveData()) :
-    ViewModel() {
+class MainViewModel : ViewModel() {
+    private val liveDataToObserve: MutableLiveData<PictureData> = MutableLiveData()
 
     fun getData(): LiveData<PictureData> {
         getPictureFromSource()
@@ -24,19 +24,21 @@ class MainViewModel(private val liveDataToObserve: MutableLiveData<PictureData> 
     }
 
     private fun getPictureOfTheDay(): PictureData {
-        val pictureDayDTO: PictureDayDTO? = PictureRepo.api.getPictureOfTheDay(BuildConfig.API_KEY).execute().body()
+        val pictureDayDTO: PictureDayDTO? =
+            PictureRepo.api.getPictureOfTheDay(BuildConfig.API_KEY).execute().body()
         var pictureData: PictureData = PictureData()
 
         pictureDayDTO?.let {
             pictureData = PictureData(
-                it.copyright,
+                //it.copyright,
                 it.date,
                 it.explanation,
-                it.hdurl,
+                //it.hdurl,
                 it.media_type,
                 it.service_version,
                 it.title,
-                it.url)
+                it.url
+            )
         }
 
         return pictureData
