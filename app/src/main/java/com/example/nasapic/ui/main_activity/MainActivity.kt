@@ -1,8 +1,9 @@
-package com.example.nasapic
+package com.example.nasapic.ui.main_activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.nasapic.R
 import com.example.nasapic.ui.earth_image.EarthImageFragment
 import com.example.nasapic.ui.main.MainFragment
 import com.example.nasapic.ui.notes.RecyclerNotesFragment
